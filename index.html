@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
+        rel="stylesheet">
+    <title>Project Manager</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container flex">
+            <div class="priority-container flex">
+                <div class="priority-color-small all">All</div>
+                <div class="priority-color-small high ">High</div>
+                <div class="priority-color-small medium">Medium</div>
+                <div class="priority-color-small low">Low</div>
+                <div class="priority-color-small no-priority">None</div>
+                <div class="priority-color-small complete">&#10004</div>
+            </div>
+            <div>
+                <button class="task-button">
+                    Create Task
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+
+            <div class="task-modal flex">
+                <textarea class="text-area" spellcheck="false" placeholder="Plese enter task!"></textarea>
+                <div class="priority-colors flex">
+                    <div class="priority-color-big high">High</div>
+                    <div class="priority-color-big medium">Medium</div>
+                    <div class="priority-color-big low">Low</div>
+                    <div class="priority-color-big no-priority active">None</div>
+                    <i class="fas fa-times cancel-btn"></i>
+                </div>
+                <button class="done-btn">Done</button>
+            </div>
+            <!-- Tasks -->
+            <div class="task-cont">
+                <!-- <div class="task-item">
+                    <div class="priority-task low">
+                        id
+                    </div>
+                    <div class="task">
+                        Hello from Prakash!
+                    </div>
+                    <div class="action-btns">
+                        <i class="fas fa-check completed"></i>
+                        <i class="far fa-trash-alt delete"></i>
+                        <i class="fas fa-pen edit"></i>
+                        <i class="fas fa-circle color low "></i>
+                        
+                    </div>
+                    <div class="lock id{">
+                        <i class="fas fa-lock lock-icon"></i>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

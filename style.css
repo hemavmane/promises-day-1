@@ -1,0 +1,276 @@
+
+:root{
+    --modal-height: 50vh;
+    --modal-width: 45vw;
+}
+
+
+
+
+
+
+
+
+/* ===================css reset==================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ==============General======================= */
+* {
+    box-sizing: border-box;
+    
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.high{
+    background-color: #ff0f0f;
+    color: black;
+}
+.medium{
+    background-color: #fbfb4a;
+    color: black;
+}
+.low{
+    background-color: #9696fb;
+    color: black;
+}
+.no-priority{
+    background-color: black;
+    color: white;
+}
+/* ============header=================== */
+
+.header{
+    background-color: lightblue;
+    padding: .5em 0;
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 10;
+}
+
+.priority-container{
+    background-color: #E8E9EB;
+    padding: .5em;
+    height: 3rem;
+    width: 50%;
+    cursor: pointer;
+    border-radius: 25px;
+
+}
+.task-button{
+    padding: 0.8em;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #E4B363;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.priority-color-small{
+    height: 2rem;
+    width: 20%;
+}
+.priority-container>*{
+    margin-left: 1.5em;
+    border-radius: 8px;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    padding: 8px;
+}
+.complete{
+    text-align: center;
+    line-height: 2rem;
+    color: #E4B363;
+}
+
+
+
+/* ==================modal=============== */
+.task-modal{
+    height: var(--modal-height);
+    width: var(--modal-width);
+    position: absolute;
+    top: calc((100vh - var(--modal-height))/2);
+    left: calc((100vw - var(--modal-width))/2);
+    display: none;
+    z-index: 1;
+}
+.text-area{
+    height: 100%;
+    width: 70%;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #82b4c4;
+    color: white;
+    padding: 2em;
+    font-size: 1.5rem;
+}
+.priority-colors{
+    background-color: #222420;
+    height: 100%;
+    width: 30%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center ;
+    position: relative;
+}
+.priority-colors>*{
+    cursor: pointer;
+
+}
+.priority-color-big{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    width: 50%;
+    border-radius: 25px;
+    font-weight:bold;
+    font-size: 1rem;
+}
+.active{
+    border: 3px solid white;
+}
+.cancel-btn{
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+    font-size: 1rem;
+    color: white;
+}
+.done-btn{
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    left: 35%;
+    padding: 0.6em 1em;
+    background-color: #E4B363;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ===================Tasks================= */
+.task-cont{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
+    gap: 2rem;
+}
+
+.task-item{
+    height: 12rem;
+    width: 30%;
+    background-color: lightblue;
+    position: relative;
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    
+}
+.priority-task{
+    height: 10%;
+    text-align: center;
+    border-radius: 25px;
+}
+.task{
+    font-size: 1rem;
+    text-align: center;
+    padding: .5em;
+}
+.action-btns{
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    padding: 0.5em;
+    height: 20%;
+    width: 50%;
+    font-size: 1rem;
+    display: none;
+    justify-content: space-between;
+}
+/* .task-item:hover{
+    
+    font-size: 2.8rem;
+} */
+.completed{
+    color: green;
+}
+.delete{
+    color: red;
+}
+
+.edit{
+    color: white;
+}
+/* lock */
+.lock{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.blur {
+    filter: blur(3px);
+}
